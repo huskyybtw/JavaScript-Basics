@@ -1,0 +1,35 @@
+#gamebox{
+    width: 1250px;
+    height: 750px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 25px;
+}
+
+#gamename{
+    text-align: center;
+    font-size: 50px;
+}
+
+#score_count{
+
+    text-align: center;
+    font-size: 25px;
+
+    color: blue;
+}
+
+#playbutton{
+    width: 250px;
+    height: 100px;
+    
+    margin-top: 25px;
+    margin-left: 675px; /*gamebox margin + width/2 -100 */
+}
+
+.food{
+    position: absolute;
+}

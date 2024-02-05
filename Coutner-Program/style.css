@@ -1,0 +1,25 @@
+#counter{
+    display:block;
+    text-align: center;
+    font-size: 3em;
+}
+#container{
+    text-align: center;
+}
+#test{
+    display: block;
+    font-size: 2em;
+}
+
+.buttons{
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(125, 18, 224);
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: background-color 0.125s;
+}
+.buttons:hover{
+    background-color: rgb(21, 1, 39);
+}
