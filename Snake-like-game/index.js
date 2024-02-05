@@ -8,6 +8,7 @@ const food_amount = 4
 
 let snakeX = 150
 let snakeY = 150
+let snake_size = 1;
 let score = 0;
 
 button.addEventListener("click",(event) =>{
@@ -15,7 +16,7 @@ button.addEventListener("click",(event) =>{
     score_count.textContent = 0;
     snake.focus();
 
-    for (let i=0;i <= food_amount ; i++){
+    for (let i=0;i < food_amount ; i++){
         spawnfood(i);
     }
 
@@ -51,6 +52,10 @@ button.addEventListener("click",(event) =>{
     });
 });
 
+function rotate(x,y){
+
+}
+
 function checkBorder(x,y){
     if (x < 150 || x > 1400){
         return false;
@@ -62,12 +67,16 @@ function checkBorder(x,y){
 }
 
 function eatfood(){
-    for (let i=0; i<=food_amount ;i++){
+    for (let i=0; i< food_amount ;i++){
         let check = food[i]
         if(snake.getBoundingClientRect().left === check.getBoundingClientRect().left 
             && snake.getBoundingClientRect().top === check.getBoundingClientRect().top){
+            
             score += 1
             score_count.textContent = score;
+
+            snake_size++
+            snake.textContent = snake.textContent + "S"
             spawnfood(i);
         }
     }
