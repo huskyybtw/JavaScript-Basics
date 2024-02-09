@@ -12,37 +12,37 @@ let final = 0
 
 let operation = "null"
 
-for (let i=0 ; i<=9 ;i++){
-    numbers[i].addEventListener("click",()=>{
-        if(!output_number){
-            if(!dot_track){
-                output1 = (output1 * digit) + i
-                display.textContent = output1
-            }
-            else{
-                output1 = output1 + (i*digit)
-                digit = digit *0.1
-                display.textContent = output1
-            }
+numbers.forEach(number => number.addEventListener("click",()=>{
+    if(!output_number){
+        if(!dot_track){
+            output1 = (output1 * digit) + parseInt(number.textContent)
+            display.textContent = output1
+         }
+        else{
+            output1 = output1 + (parseInt(number.textContent)*digit)
+            digit = digit *0.1
+            display.textContent = output1
+        }
+    }
+    else{
+        if(!dot_track){
+            output2 = (output2 * digit) + parseInt(number.textContent)
+            display.textContent = output2
         }
         else{
-            if(!dot_track){
-                output2 = (output2 * digit) + i
-                display.textContent = output2
-            }
-            else{
-                output2 = output2 + (i*digit)
-                digit = digit *0.1
-                display.textContent = output2
-            }
+             output2 = output2 + (parseInt(number.textContent)*digit)
+            digit = digit *0.1
+            display.textContent = output2
         }
-    })
-}
+    }
+}))
 
 const dot = document.getElementById("dot")
 dot.addEventListener("click",()=>{
-    digit = 0.1
-    dot_track = true;
+    if(!dot_track){
+        digit = 0.1
+        dot_track = true;
+    }
 })
 
 const equals = document.getElementById("equals")

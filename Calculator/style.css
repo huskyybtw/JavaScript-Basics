@@ -1,3 +1,7 @@
+body{
+    background: linear-gradient(to right, purple, yellow);
+}
+
 #container{
     height: 725px;
     width: 600px;
@@ -10,11 +14,9 @@
     border: 10px solid;
 }
 #calcname{
-    border: 2px solid;
     height:25px;
 }
 #output{
-    border: 2px solid;
     height: 100px;
 }
 
@@ -23,6 +25,14 @@
     grid-template-columns: repeat(4,auto);
 
     height: 150px;
+
+}
+.toppaneloperations{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.numbers,#dot{
+    background-color: grey;
 }
 
 #bottompanel{
@@ -37,10 +47,12 @@
     grid-template-columns: repeat(3,auto);
 }
 
-#number9{
+#number0{
     grid-column: span 2;
 }
-
 #operationcontainer{
     display: grid;
+}
+.operations,#plus,#equals{
+    background-color: orange;
 }
