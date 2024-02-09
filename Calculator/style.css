@@ -1,0 +1,58 @@
+body{
+    background: linear-gradient(to right, purple, yellow);
+}
+
+#container{
+    height: 725px;
+    width: 600px;
+
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    border: 10px solid;
+}
+#calcname{
+    height:25px;
+}
+#output{
+    height: 100px;
+}
+
+#toppanel{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+
+    height: 150px;
+
+}
+.toppaneloperations{
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.numbers,#dot{
+    background-color: grey;
+}
+
+#bottompanel{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    height: 450px;
+}
+
+#numbercontainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+
+#number0{
+    grid-column: span 2;
+}
+#operationcontainer{
+    display: grid;
+}
+.operations,#plus,#equals{
+    background-color: orange;
+}
