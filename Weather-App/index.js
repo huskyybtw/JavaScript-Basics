@@ -3,6 +3,7 @@ const apikey = "f328268bfa06bc4013cdaa7555e20578"
 const submitButton = document.getElementById("submitCity")
 const input = document.getElementById("cityForm")
 // Temp info
+const infoDIV = document.querySelector(".info")
 const weatheremoji = document.getElementById("weatheremoji")
 const temp = document.getElementById("temperature")
 const cityName = document.getElementById("cityName")
@@ -14,24 +15,37 @@ const styles = getComputedStyle(element)
 const startColor = styles.getPropertyValue('--start-color');
 const endColor = styles.getPropertyValue('--end-color');
 
+let ok = false;
+
 submitButton.addEventListener("click",async ()=>{
         const city = input.value.trim();
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
-
         try{
         const response = await fetch(apiUrl)
         const data = await response.json()
 
-        if (data.name === city){
-            updateInfo(data)
-        }
-        else{
-            cityName.textContent = "Couldnt find your city"
-        }
+            if (data.name === city){
+                ok = true;
+                showDiv(ok)
+                updateInfo(data)
+            }
+            else{
+                ok = false;
+                showDiv(ok)
+            }
         }catch (e){
             console.error("error",e)
         }
 })
+
+function showDiv(boolean){
+    if(boolean){
+        infoDIV.style.display = "flex";
+    }
+    else{
+        infoDIV.style.display = "none"
+    }
+}
 
 // Setup labels with proper data
 function updateInfo(data){
@@ -46,6 +60,7 @@ function updateInfo(data){
     changebackgroundCard(temperature)
 }
 
+//Changes background card color
 function changebackgroundCard(temperature){
     if (temperature >= 25){
         element.style.setProperty('--start-color', 'rgb(201, 80, 24)');

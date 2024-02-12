@@ -1,8 +1,17 @@
 body{
     font-family: 'Roboto', sans-serif;
-    font-size: xx-large;
+    line-height: 2;
+    font-size: 20px;
 
     background-color: rgb(56, 49, 49);
+}
+body label,#cityName,#temperature{
+    font-weight: bold;
+}
+#temperature{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 35px;
 }
 .container{
     display: flex;
@@ -16,7 +25,7 @@ body{
 
     border-radius: 10px;
     box-shadow:0 4px 8px rbga(0,0,0,0.1);
-    padding: 50px;
+    padding: 25px;
 
     --start-color:rgb(88, 209, 193); 
     --end-color: rgb(27, 105, 136);
@@ -27,12 +36,9 @@ body{
     display: flex;
     align-self: center;
     justify-content: space-between;
-    padding: 10px;
 
     height: 50px;
     width: 400px;
-
-    font-size: xx-large;
 }
 #cityForm{
     border: 1px transparent;
@@ -55,14 +61,8 @@ body{
     top: 0;
     left: 0;
 }
-#weatheremojiP{
-    flex-grow: 2;
-}
-.additional{
-    display: flex;
+.info{
+    display: none;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
-#humidity{
-    margin-right: 50px;
 }
