@@ -1,0 +1,68 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+
+    background-color: rgb(56, 49, 49);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 10px;
+    box-shadow:0 4px 8px rbga(0,0,0,0.1);
+    padding: 50px;
+
+    --start-color:rgb(88, 209, 193); 
+    --end-color: rgb(27, 105, 136);
+
+    background: linear-gradient(to right bottom, var(--start-color), var(--end-color));
+}
+.input{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    height: 50px;
+    width: 400px;
+
+    font-size: xx-large;
+}
+#cityForm{
+    border: 1px transparent;
+    border-radius: 10px;
+
+    width: 75%;
+}
+#submitCity{
+    border: 0px transparent;
+    border-radius: 50%;
+    width: 25%;
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 25px;
+}
+#submitCity img{
+    width: 50%;
+    
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+#weatheremojiP{
+    flex-grow: 2;
+}
+.additional{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#humidity{
+    margin-right: 50px;
+}
